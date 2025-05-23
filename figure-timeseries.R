@@ -460,7 +460,7 @@ ggplot()+
 
 viz <-
   list(
-    source = "github.com/tdhock/montreal-bikes",
+    source = "https://github.com/suhaani-agarwal/montreal-velos/blob/master/figure-timeseries.R",
     MonthFacet=MonthFacet,
     DaysFacet=DaysFacet,
     summary=MonthSummary,
