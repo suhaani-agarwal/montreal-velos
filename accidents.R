@@ -1,5 +1,5 @@
-works_with_R("3.2.2", data.table="1.9.6")
-
+# works_with_R("3.2.2", data.table="1.9.6")
+library(data.table)
 column.code <- c(
   date.str="DT_ACCDN",
   time.str="HR_ACCDN",

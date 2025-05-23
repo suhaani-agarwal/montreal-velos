@@ -1,5 +1,6 @@
-works_with_R("3.2.2", data.table="1.9.6", RJSONIO="1.3.0")
-
+# works_with_R("3.2.2", data.table="1.9.6", RJSONIO="1.3.0")
+library(data.table)
+library(RJSONIO)
 reseau <- fromJSON("defivelomtl/Réseau Cyclable/reseaucyclable201511.json")
 
 conversion.list <- list(
