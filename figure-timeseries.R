@@ -213,7 +213,7 @@ mtl.map <- ggplot() +
     # theme_bw() +
     theme_animint(height = 550 , width = 800) +
     theme(
-      # axis.line = element_blank(),
+      axis.line = element_blank(),
       axis.text = element_blank(), 
       axis.ticks = element_blank(),
       axis.title = element_blank(),
@@ -243,7 +243,7 @@ mtl.map <- ggplot() +
       aes(lon, lat, label = location),
       data = show.locations,
       clickSelects = "location"
-    )
+    )+guides(color = "none") 
 
 dates <- velos %>%
   group_by(date) %>%
@@ -395,11 +395,18 @@ ggplot()+
   theme_bw()+
   theme_animint(height = 500,width=600)+
   ggtitle("Selected month (weekends in grey)")+
-  geom_tallrect(aes(xmin=day.of.the.month-0.5, xmax=day.of.the.month+0.5,
-                    key=paste(day.POSIXct)),
-                showSelected="month", alpha = 0.2,
-                color="grey",
-                data=weekend.dt)+
+   geom_tallrect(
+    aes(
+      xmin = day.of.the.month - 0.5, 
+      xmax = day.of.the.month + 0.5,
+      key = day.POSIXct 
+    ),
+    showSelected = "month",
+    alpha = 0.85,
+    color = NA,
+    fill = "grey",
+    data = unique(weekend.dt, by = "day.POSIXct")
+  ) +
   # guides(color="none")+
   
   facet_grid(facet ~ ., scales="free")+
